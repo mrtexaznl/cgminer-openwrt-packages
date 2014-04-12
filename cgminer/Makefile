@@ -22,7 +22,7 @@ PKG_RELEASE:=1
 PKG_INSTALL:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV).tar.bz2
-PKG_SOURCE_URL:=git://github.com/ckolivas/cgminer.git
+PKG_SOURCE_URL:=git://github.com/mrtexaznl/cgminer
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
@@ -35,7 +35,7 @@ define Package/cgminer
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=cgminer
-	URL:=https://github.com/ckolivas/cgminer
+	URL:=https://github.com/mrtexaznl/cgminer
 ifeq ($(CONFIG_TARGET_brcm2708_RaspberryPi),y)
 	DEPENDS:=+libcurl +libpthread +jansson +udev +libncurses
 else
@@ -44,7 +44,7 @@ endif
 endef
 
 define Package/cgminer/description
-Cgminer is a multi-threaded multi-pool GPU, FPGA and CPU miner with ATI GPU
+Cgminer for MediterraneanCoin is a multi-threaded multi-pool GPU, FPGA and CPU miner with ATI GPU
 monitoring, (over)clocking and fanspeed support for bitcoin and derivative
 coins. Do not use on multiple block chains at the same time!
 endef
