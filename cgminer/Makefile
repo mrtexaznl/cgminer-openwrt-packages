@@ -60,16 +60,16 @@ CONFIGURE_ARGS += --disable-opencl --disable-adl
 TARGET_LDFLAGS += -Wl,-rpath-link=$(STAGING_DIR)/usr/lib
 
 ifeq ($(CONFIG_CGMINER_AVALON2),)
-	CONFIGURE_ARGS += --without-curses --enable-avalon
+	CONFIGURE_ARGS += --without-curses --enable-ants1
 else
-	CONFIGURE_ARGS += --enable-avalon2
+	CONFIGURE_ARGS += --enable-ants1
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
 
-	wget -O $(PKG_BUILD_DIR)/0001-avalon2.patch \
-		"https://raw2.github.com/BitSyncom/avalon-extras/master/cgminer-patches/0001-avalon2.patch"
-	(cd $(PKG_BUILD_DIR); patch -Np1 < 0001-avalon2.patch;)
+	#wget -O $(PKG_BUILD_DIR)/0001-avalon2.patch \
+	#	"https://raw2.github.com/BitSyncom/avalon-extras/master/cgminer-patches/0001-avalon2.patch"
+	#(cd $(PKG_BUILD_DIR); patch -Np1 < 0001-avalon2.patch;)
 endef
 
 endif
