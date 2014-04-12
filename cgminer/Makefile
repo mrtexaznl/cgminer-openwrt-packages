@@ -90,12 +90,12 @@ define Package/cgminer/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/cgminer  $(1)/usr/bin
 	$(INSTALL_BIN) $(FILES_DIR)/cgminer-monitor        $(1)/usr/bin
 
-ifeq ($(CONFIG_CGMINER_AVALON2),)
+ifeq ($(CONFIG_CGMINER_ANTMINER_S1),)
 	$(INSTALL_BIN) $(FILES_DIR)/cgminer.init           $(1)/etc/init.d/cgminer
 	$(CP)          $(FILES_DIR)/cgminer.config         $(1)/etc/config/cgminer
 else
-	$(INSTALL_BIN) $(FILES_DIR)/cgminer.avalon2.init   $(1)/etc/init.d/cgminer
-	$(CP)          $(FILES_DIR)/cgminer.avalon2.config $(1)/etc/config/cgminer
+	$(INSTALL_BIN) $(FILES_DIR)/cgminer.antminers1.init   $(1)/etc/init.d/cgminer
+	$(CP)          $(FILES_DIR)/cgminer.antminers1.config $(1)/etc/config/cgminer
 endif
 endef
 
